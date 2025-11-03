@@ -1,19 +1,23 @@
 
 import pandas as pd
+import plotly.express as px
 
 
-def main():
-    data_path = "sample_data/students.csv"
-    df = pd.read_csv(data_path)
-
-    print("Student grade data:")
-    print(df.to_string(index=False))
-
-    # Show descriptive statistics for the grade distribution
-    stats = df["grade"].describe()
-    print("\nGrade statistics:")
-    print(stats.to_string())
+df = pd.read_csv("sample_data/students.csv")
 
 
-if __name__ == "__main__":
-    main()
+fig = px.bar(
+    df,
+    x="name",
+    y="grade",
+    color="section",
+    title="Student Grades by Section",
+    barmode="group"
+)
+
+fig.show()
+
+
+avg = df.groupby("section")["grade"].mean()
+print("Average grade per section:")
+print(avg)
