@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Enhanced Student Grade Visualization with Plotly"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
+ fatma-assignment
     "pandas",
     "plotly",
+
+    "pandas", "plotly"
+ main
 ]
