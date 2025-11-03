@@ -1,5 +1,21 @@
 import pandas as pd
 import plotly.express as px
+ fatma-assignment
+
+
+df = pd.read_csv("sample_data/students.csv")
+
+
+fig = px.bar(
+    df,
+    x="name",
+    y="grade",
+    color="section",
+    title="Student Grades by Section",
+    barmode="group"
+)
+
+
 
 def main():
     data_path = "sample_data/students.csv"
@@ -16,7 +32,10 @@ fig = px.bar(
         color="section",
         title="Student Grades by Section"
     )
+ main
 fig.show()
 
-if __name__ == "__main__":
-    main()
+
+avg = df.groupby("section")["grade"].mean()
+print("Average grade per section:")
+print(avg)
