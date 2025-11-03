@@ -6,9 +6,9 @@ This project includes a small dataset (`students.csv`) with 10 students and thei
 
 ### Setup
 1. Create and activate a Python 3.12 virtual environment.
-2. Install dependencies (pandas is declared in `pyproject.toml`):
+2. Install dependencies (declared in `pyproject.toml`):
    ```bash
-   pip install -e .
+   uv sync
    ```
 
 ### Usage
