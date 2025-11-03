@@ -2,6 +2,8 @@ import pandas as pd
 import plotly.express as px
 
 def main():
+
+    print('test')
     data_path = "sample_data/students.csv"
     df = pd.read_csv(data_path)
     print("Student Grades:")
